@@ -129,10 +129,11 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
-
+doc_events = {
+    "Sales Invoice": {
+        "after_insert": "invoice_override_pos.sales_invoice_hooks.after_save"
+    }
+}
 # Document Events
 # ---------------
 # Hook on document methods and events
